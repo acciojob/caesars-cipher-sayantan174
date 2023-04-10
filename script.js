@@ -10,13 +10,12 @@ const lookup = {
   'Y': 'L','Z': 'M', '?': '?', ',': ',',' ':' '
 };
 
-function rot13(encodedStr){
-   let decodedArr = []; // Your Result goes here
-  // Only change code below this line
-	for(let a=0;a<encodedStr.length;a++){
-		decodedArr[a]=lookup[encodedStr[a]];
-	}
-  return decodedArr;//return decodedArr
+function rot13(str) {
+var input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+var output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+var index = x => input.indexOf(x);
+var translate = x => index(x) > -1 ? output[index(x)] : x;
+return str.split('').map(translate).join('');
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
